@@ -1,4 +1,4 @@
-# denis-bind9
+# vinyldns-bind9
 Docker image for use with denis.
 
 This image _copies_ over configuration to the bind 9 image before starting the bind9 service.
