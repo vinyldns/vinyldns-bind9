@@ -1,4 +1,4 @@
 #!/bin/bash
 set -ex
 
-docker build -t hub.docker.com/vinyldns/bind9:latest .
+docker build -t vinyldns/bind9:latest .
