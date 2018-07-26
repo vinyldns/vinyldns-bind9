@@ -17,7 +17,6 @@ git tag -a "$version" -m "version $version"
 git push
 git push --tags
 
-docker login index.docker.io
 docker tag vinyldns/bind9:latest vinyldns/bind9:$version
 docker push vinyldns/bind9:latest
 docker push vinyldns/bind9:$version
