@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  bind:
+    build:
+      context: .
+
+    ports:
+    - 5333:53/tcp
+    - 5333:53/udp
+
+    volumes:
+    - ./example/zones:/var/cache/bind/zones
+    - ./example/config:/var/cache/bind/config

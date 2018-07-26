@@ -1,0 +1,7 @@
+
+// Put all of your zones in here, be sure to reference the
+// path /var/bind, as that is where they will be copied to
+zone "example.com" IN {
+    type master;
+    file "/var/bind/example.com.zone";
+};

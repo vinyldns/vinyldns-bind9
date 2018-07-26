@@ -1,0 +1,3 @@
+// This is the empty version of named.conf.local
+// If you did not mount your volume directory and you
+// see this in there, your zones will not be loaded
