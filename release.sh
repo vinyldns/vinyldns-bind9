@@ -1,8 +1,6 @@
 #!/bin/bash
 set -ex
 
-# ensure we're up to date
-git pull
 # bump version
 version=`cat VERSION`
 echo "version: $version"
