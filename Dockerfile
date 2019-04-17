@@ -1,16 +1,12 @@
-FROM debian:stretch
+FROM alpine:3.6
 
-RUN set -x \
-	&& apt-get update \
-	&& apt-get install --no-install-recommends --no-install-suggests -y \
-		bind9 \
-		dnsutils \
-		iputils-ping \
-	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps \
-	&& rm -r /var/lib/apt/lists/* \
-	&& mkdir /var/log/named \
-	&& chown bind:bind /var/log/named \
-	&& chmod 0755 /var/log/named
+RUN apk --update upgrade && \
+    apk add --update bind && \
+    rm -rf /var/cache/apk/*
+
+RUN mkdir -p /var/cache/bind/zones && \
+    mkdir -p /var/cache/bind/config && \
+    mkdir -p /var/log/named
 
 # zones are copied in before running
 # the config directory should contain named.conf.local containing
