@@ -5,7 +5,7 @@ This image _copies_ over configuration to the bind 9 image before starting the b
 
 The volume `/var/cache/bind/zones` contains your zone files.  These are copied onto the container to `/var/bind`
 
-The volume `/var/cache/bind/config` should contain a single file `named.conf.local`.  This file is copied over to `/etc/bind` and will _replace_ the existing `named.conf.local` that is currently empty.  
+The volume `/var/cache/bind/config` should contain at least a single file `named.conf.local`.  All `named.conf.*` files in this directory are copied over to `/etc/bind` and will _replace_ the existing files of the same name. 
 
 > If you do not mount both, then the bind9 server may start up without any zones
 
